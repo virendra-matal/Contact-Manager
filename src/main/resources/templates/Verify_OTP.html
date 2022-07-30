@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="Base::layout(~{::section})">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Home</title>
+</head>
+
+<body>
+
+    <section class="banner">
+        <div class="container  text-center text-primary">
+            <div class="card " style="position: relative; top: 230px;left: 30px; opacity: .9;">
+                <div class="card-body bg-light">
+                    <div class="row bg-dark">
+                        <div class="col-md-6 offset-md-3 my-3">
+                            <form th:action="@{verify_otp}" method="post">
+                                <div th:unless="${session.wrongotp}" class="alert alert-success " role="alert">
+                                    OTP is send to you on your Email...
+                                </div>
+
+                                <div th:if="${session.wrongotp}" class="alert alert-danger" role="alert">
+                                    <p th:text="${session.wrongotp}"></p>
+                                    <th:block th:text="${#session.removeAttribute('wrongotp')}"></th:block>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1"> OTP :</label>
+                                    <input type="text" class="form-control  text-primary" id="username" name="otp"
+                                        aria-describedby="username" placeholder="Enter OTP..." />
+
+                                </div>
+                                <Button type="submit" class="btn btn-primary">Varify Your Account</Button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="Base::layout(~{::section})">
+<head>
+<meta charset="UTF-8" />
+<title>Home</title>
+</head>
+<body>
+
+<section class="banner">
+	<div class="container" >
+		<div class="row" >
+			<div class="col-md-6 offset-md-3 mt-5">
+				<form  novalidate="novalidate" th:action="@{/dologin}" method="post" class="bg-transparent p-5 mt-5">
+					<h1 class="text-center mt-o">LOGIN</h1>
+					<div th:if="${param.error}" class="alert alert-danger">
+						Wrong Username and Password...
+					</div>
+					<div th:if="${param.logout}" class="alert alert-success">
+						You have been successfully logged out!!!
+					</div>
+
+					<div th:if="${session.password}" class="alert alert-success" role="alert">
+						<p th:text="${session.password}"></p>
+						<th:block th:text="${#session.removeAttribute('password')}"></th:block>
+					</div>
+
+					<div class="form-group">
+						<label for="exampleInputEmail1"> Username :</label> 
+						<input
+							type="text" class="form-control bg-transparent text-white" id="username"
+							name="username"
+							aria-describedby="username" placeholder="Enter email"
+							 />
+														 
+					</div>
+					
+					
+					<div class="form-group">
+						<label for="exampleInputPassword1">Password :</label> 
+						<input
+							type="password" class="form-control bg-transparent text-white" id="email"
+							placeholder="Enater Password"
+							name="password"
+							 />
+					</div>
+					
+					
+					<div class="form-group form-check">
+						<input type="checkbox" class="form-check-input"
+						name="agreed"
+						 id="exampleCheck1"
+						  />
+						<label class="form-check-label" for="exampleCheck1">Accept term and conditions</label>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						&nbsp;&nbsp;
+						<a class="text-light" th:href="@{/forgot}">Forgot Password</a>
+							
+						<div class="container ">
+							
+						</div>
+					</div>
+					<div class="container text-center">
+					<button type="submit" class="btn btn-success">Sign In</button>
+					<a th:href="@{/signup}" class="btn btn-primary">Sign Up</a>
+					</div>		
+				</form>
+			</div>
+		</div>
+	</div>
+	</section>
+</body>
+</html>

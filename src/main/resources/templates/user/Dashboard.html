@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="user/Base::layout(~{::section})">
+<head>
+<meta charset="UTF-8" />
+<title>DashBoard</title>
+</head>
+<body>
+
+<section class="banner">
+	
+	<div class="container text-center  ">
+			<div class="card bg-transparent " style="opacity: .7" th:if="${user}">
+				<div class="card-body mt-2">
+					
+					<img th:src="@{'/images/'+${user.ImageUrl}}" alt="" style="width: 200px; height: 200px; border-radius: 150px; object-fit:cover;" />
+					<h1><span th:text="${user.Name}"></span></h1>
+					<table class="table table-hover table-bordered " >
+						  
+						    <tr>
+						     <th scope="col">#ID :</th>
+						     <td th:text="${'USER'+user.UserId}">@mdo</td>
+						    </tr>
+						 
+						  
+						    <tr>
+						     <th scope="col">is User active ? : </th>
+						     <td th:text="${user.Enable}">@mdo</td>
+						    </tr>
+						    
+						     <tr>
+						     <th scope="col">Email :</th>
+						     <td th:text="${user.Email}">@mdo</td>
+						    </tr>
+						    
+						     <tr>
+						     <th scope="col">About :</th>
+						     <td th:text="${user.About}">@mdo</td>
+						    </tr>
+						    <!-- <tr>
+						     <th scope="col">Action :</th>
+						     <td>
+						     <a href="#" th:onclick="|DeleteContact(${contact.ContactId})|" >
+						      <i class="fa-solid fa-trash-can text-danger" ></i></a>
+						      	 
+						      	<form id="form" method="post" th:action="@{'/user/updateContact/'+${contact.ContactId}}">
+						      	 
+						      	 	<button type="submit" class="bg-transparent border-0"><i class="fa-solid fa-pen-nib text-primary "></i></button>
+						      
+						      </form>
+						     </td>
+						    </tr> -->
+						   
+						  
+					</table>
+					
+					
+				</div>
+			</div>
+		</div>
+		
+		<h3 th:unless="${user}" class="mt-5 text-center" style="position: relative;top: 50px;"> You don't have authority to view this contact...</h3>
+	
+	<script>
+		$(document).ready(function(){
+			$('#Profile').addClass('active')
+		});
+	</script>
+	</section>
+</body>
+</html>

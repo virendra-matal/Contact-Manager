@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="Base::layout(~{::section})">
+<head>
+<meta charset="UTF-8" />
+<title>Home</title>
+</head>
+<body>
+	<section class="banner">
+		
+		<div class="container text-center ">
+			<div class="card bg-transparent mx-2">
+				<div class="card-body ">
+				<div th:if="${session.Message}" th:classappend="${session.Message.type}" class="alert " role="alert">
+				  	<p th:text="${session.Message.content}"></p>
+				  	
+				  	<th:block th:text="${#session.removeAttribute('Message')}"></th:block>
+				</div>
+					<h1>SIGN UP HERE !!</h1>
+					
+					<form novalidate="novalidate" th:action="@{do-register}" method="post" th:object="${user}"  class="mx-5 ">
+					
+						<div class="form-row ">
+							<div class="form-group col-md-6 offset-md-3 text-center ">
+								<div>
+									<label for="inputEmail4" >Name : eg. Virendra Matal</label>
+	      							<input type="text" name="Name" th:value="${user.Name}" class="form-control bg-transparent text-white" id="Name" placeholder="Enter Your Name..."
+	      									th:classappend="${#fields.hasErrors('Name')? 'is-invalid' : ''}">
+	      							<div th:each="e:${#fields.errors('Name')}" th:text="${e}" class="invalid-feedback">
+							          
+							        </div>
+								</div>
+								
+								<div>
+									<label for="inputEmail4">Email : eg. veermatal100@gmail.com</label>
+	      							<input type="email" name="Email" th:value="${user.Email}" class="form-control bg-transparent text-white" id="inputEmail4" placeholder="Enater Your Email"
+	      									th:classappend="${#fields.hasErrors('Email')? 'is-invalid' : ''}">
+	      							<div th:each="e:${#fields.errors('Email')}" th:text="${e}" class="invalid-feedback">
+							          
+							        </div>
+								</div>
+								
+								<div>
+									<label for="inputEmail4">Password : eg. ********</label>
+	      							<input type="password" name="Password" th:value="${user.Password}" class="form-control bg-transparent text-white" id="Pass" placeholder="Enter Password..."
+	      									th:classappend="${#fields.hasErrors('Password')? 'is-invalid' : ''}">
+	      							<div th:each="e:${#fields.errors('Password')}" th:text="${e}" class="invalid-feedback">
+							          
+							        </div>
+								</div>
+								
+								<!-- <div >
+									<label for="inputGroupFile01">Choose Image : eg. abc.jpg</label>
+								    <input type="file" name="ImageUrl" class="form-control bg-transparent text-white" id="inputGroupFile01" placeholder="Choose">
+								</div> -->
+								
+								<div class="form-group">
+									<label for="inputState">Role : eg. User</label>
+								     <select id="inputState" name="Role" class="form-control bg-transparent text-white text-center">
+								        <option  selected value="ROLE_USER">User</option>
+								        <option  value="ROLE_ADMIN">Admin</option>
+								     </select>
+								</div>
+								
+								 <div class="form-group">
+								    <label for="exampleFormControlTextarea1">About Yourself : eg. I am Java Developer...</label>
+								    <textarea class="form-control bg-transparent text-white" name="About" th:text="${user.About}" id="exampleFormControlTextarea1" rows="3" placeholder="I am Java Developer..."
+								    			th:classappend="${#fields.hasErrors('About')? 'is-invalid' : ''}"></textarea>
+								    <div th:each="e:${#fields.errors('About')}" th:text="${e}" class="invalid-feedback">
+							          
+							        </div>
+								  </div>
+								  
+								  <div class="form-group form-check">
+										<input type="checkbox" class="form-check-input bg-transparent text-white" name="agreed" id="exampleCheck1"/>
+										<label class="form-check-label" for="exampleCheck1">Accept term and conditions</label>
+								  </div>
+								  
+								  <input type="submit" value="Sign Up" class="btn-success bg-transparent text-white">
+								  <input type="reset" value="Reset" class="btn-primary bg-transparent text-white">
+							</div>
+						</div>
+					
+					</form>
+					
+				</div>
+			</div>
+		</div>
+		
+		
+	</section>
+</body>
+</html>

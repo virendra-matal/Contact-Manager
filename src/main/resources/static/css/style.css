@@ -1,0 +1,234 @@
+.body {
+	
+	background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+		url("../images/web.jpg") !important;
+	background-size: inherit !important;
+	
+}
+
+#navbarid {
+	width: 100%;
+	position: relative;
+	top: 0px;
+	opacity: 0.9;
+	background: linear-gradient(white, limegreen);
+}
+
+/* .nav {
+	left: 10%;
+	background: linear-gradient(white, darkblue);
+	color: white;
+} */
+.banner {
+	color: white;
+	width: 100%;
+	height: 85vh;
+}
+
+.ul, li {
+	text-decoration: underline;
+}
+
+li {
+	display: block;
+	font-style: italic;
+}
+
+.img1 {
+	width: 30%;
+	height: 30vh;
+	background-image: url("../images/web2.jpg") !important;
+	background-size: contain;
+	position: relative;
+	top: 100px;
+	left: 262px;
+}
+
+.img2 {
+	width: 30%;
+	height: 30vh;
+	background-image: url("../images/web.jpg");
+	background-size: contain;
+	position: relative;
+	top: 98px;
+	left: 665px;
+}
+
+.img3 {
+	width: 30%;
+	height: 30vh;
+	background-image: url("../images/web3.jpg");
+	background-size: contain;
+	position: relative;
+	top: -363px;
+	left: 758px;
+}
+
+.img4 {
+	width: 30%;
+	height: 30vh;
+	background-image: url("../images/web4.jpg");
+	background-size: contain;
+	position: relative;
+	top: -217px;
+	left: 167px;
+}
+
+.center {
+	position: absolute;
+	top: 326px;
+	left: 0px;
+	text-align: center;
+	text-transform: uppercase;
+	color: white;
+}
+
+.ceter, p {
+	text-transform: capitalize;
+}
+
+@media only screen and (max-width: 600px) {
+	.sidebar {
+		display: none;
+		/* margin-top: 68px; */
+		width: 80% !important;
+		height: 100%;
+		position: fixed;
+		/* Created with https://www.css-gradient.com */
+		background: #35E8F3;
+		background: -webkit-linear-gradient(left, #35E8F3, #0A3991);
+		background: -moz-linear-gradient(left, #35E8F3, #0A3991);
+		background: linear-gradient(to right, #35E8F3, #0A3991);
+		z-index: 10;
+	}
+	.sidebar a {
+		color: white;
+		/* display: block; */
+		height: 60px;
+		width: 100%;
+		margin-left: 30px;
+		/* margin-top: 50px; */
+		font-style: italic;
+		font-size: x-large;
+		text-decoration: none;
+		
+	}
+	.sidebar a:hover {
+		text-decoration: none;
+		color: green;
+	}
+	.content {
+		margin-left: 0% !important;
+	}
+	.fas{
+		font-size: 40px;
+		position: absolute;
+		right: 15px;
+		top: 80px;
+		color: white;
+		z-index: 100;
+	}
+}
+
+/* Sidebar styling */
+.sidebar {
+	margin: 0px 10px 0px 10px;
+	
+	width: 20%;
+	height: 100%;
+	position: fixed;
+	/* top: 70px;
+	bottom: 0; */
+	/* Created with https://www.css-gradient.com */
+	background: #35E8F3;
+	background: -webkit-linear-gradient(left, #35E8F3, #0A3991);
+	background: -moz-linear-gradient(left, #35E8F3, #0A3991);
+	background: linear-gradient(to right, #35E8F3, #0A3991);
+	/* opacity: 0.7; */
+	padding-top: 30px;
+	
+}
+
+.sidebar a {
+	color: white;
+	display: block;
+	height: 60px;
+	width: 100%;
+	margin-left: 30px;
+	/* margin-top: 50px; */
+	font-style: italic;
+	font-size: x-large;
+	text-decoration: none;
+	
+}
+
+.sidebar a:hover {
+	text-decoration: none;
+	color: green;
+}
+
+.sidebar .crossbtn{
+	
+	position: absolute;
+	top: 0;
+	right: 30px;
+	font-size: 40px;
+	color: white;
+	cursor: pointer;
+}
+
+.content {
+	margin-left: 22%;
+	position: relative;
+	
+}
+.content .fas{
+		font-size: 30px;
+		position: fixed;
+		cursor: pointer;
+		
+	}
+	
+.Image_Profile{
+	
+	width: 40px;
+	height: 40px;
+	border-radius: 30px;
+	object-fit: cover;
+	border: 1px solid white;
+}
+
+/* Search css  */
+.searchparent{
+	
+	position: relative;
+	
+}
+
+
+.search{
+	
+	position: absolute;
+	background: gray;
+	display: none;
+	padding: 10px;
+	border: 1px solid black;
+	width: 100%;
+	z-index: 200;
+	opacity: .9;
+	
+}
+.table{
+	position: relative;
+	top: 0px;
+}
+
+.page-nav{
+	position: relative;
+	top: 0px;
+}
+
+.active{
+	color: green !important;
+}
+
